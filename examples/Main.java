@@ -6,13 +6,15 @@ public class Main {
         String directory = "C:\\Users\\Lite\\Desktop";
 
         InstagramDownloader instagram = new InstagramDownloader();
-       // instagram.downloadImage(instaImage,directory);
-        // instagram.downloadVideo(instaVideo,directory);
-         // instagram.downloadMedia(instaImage,directory);
-        // System.out.println(instagram.getDownloadUrl(instaVideo));
-
-
-
+       
+		
+	      instagram.downloadImage(instaImage,directory);
+       
+	      instagram.downloadVideo(instaVideo,directory);
+       
+	      instagram.downloadMedia(instaImage,directory);
+       
+	      System.out.println(instagram.getDownloadUrl(instaVideo));
     }
 }
 
