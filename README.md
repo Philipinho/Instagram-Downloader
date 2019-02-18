@@ -6,4 +6,7 @@ Instagram video and image downloader written in Java
 
 This readme  will be updated.
 
+# License
+Licensed under Apache License 2.0
+
 
