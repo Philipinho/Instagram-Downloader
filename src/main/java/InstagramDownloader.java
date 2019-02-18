@@ -1,6 +1,6 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import utils.helper;
+import utils.helpers;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class InstagramDownloader {
     * @param targetDirectory The directory to store downloaded media
     * */
     public void downloadMedia(String url, String targetDirectory){
-        helper.validateURL(url);
+        helpers.validateURL(url);
         try{
                 page = Jsoup.connect(url).userAgent(USER_AGENT).get();
                 String mediaType = page.select("meta[name=medium]").first()
@@ -53,7 +53,7 @@ public class InstagramDownloader {
     public void downloadVideo(String url, String targetDirectory){
         String videoUrl = "";
 
-        helper.validateURL(url);
+        helpers.validateURL(url);
         try {
                 page = Jsoup.connect(url).userAgent(USER_AGENT).get();
                 videoUrl = page.select("meta[property=og:video]").first()
@@ -74,7 +74,7 @@ public class InstagramDownloader {
     public void downloadImage(String url, String targetDirectory){
         String imageUrl = "";
 
-        helper.validateURL(url);
+        helpers.validateURL(url);
         try {
                 page = Jsoup.connect(url).userAgent(USER_AGENT).get();
                 imageUrl = page.select("meta[property=og:image]").first()
@@ -95,7 +95,7 @@ public class InstagramDownloader {
     public String getDownloadUrl(String url){
         String downloadUrl = "";
 
-        helper.validateURL(url);
+        helpers.validateURL(url);
         try{
                 page = Jsoup.connect(url).userAgent(USER_AGENT).get();
                 String mediaType = page.select("meta[name=medium]").first()
@@ -144,7 +144,7 @@ public class InstagramDownloader {
             System.out.println(String.format("Media Location: %s", targetPath));
             System.out.println(String.format("Media Name: %s", filename));
             System.out.println(String.format("Media Size: %.2f kb", fileSize));
-            System.out.println(String.format("Media Type: %s", helper.mediaType(filename)));
+            System.out.println(String.format("Media Type: %s", helpers.mediaType(filename)));
 
         } catch (IOException e){
             e.printStackTrace();

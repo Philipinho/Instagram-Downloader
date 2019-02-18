@@ -1,6 +1,6 @@
 package utils;
 
-public class helper {
+public class helpers {
 
     public static void validateURL(String url){
         if (url.startsWith("www.") || url.startsWith("instagram.com")){
